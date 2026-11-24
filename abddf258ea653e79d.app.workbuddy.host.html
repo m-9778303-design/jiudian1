@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://abddf258ea653e79d.app.workbuddy.host/?sharecode=U4LN3CZ52T -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ala-Archa — The Cliffside Restaurant | 阿拉恰国家公园悬崖餐厅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;family=Noto+Serif+SC:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141414;
+  --paper:#f4f2ee;
+  --paper2:#ece9e3;
+  --grey:#8a867e;
+  --line:rgba(20,20,20,.14);
+  --accent:#9a6b3f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Archivo','Noto Sans SC',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--ink);color:var(--paper)}
+
+/* ---------- progress ---------- */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--ink);z-index:200}
+
+/* ---------- nav ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 32px;
+  mix-blend-mode:difference;color:#fff;
+  transition:transform .4s ease;
+}
+header.hide{transform:translateY(-110%)}
+.brand{font-weight:800;letter-spacing:.06em;font-size:15px;text-transform:uppercase}
+.brand small{font-weight:400;opacity:.7;margin-left:10px;letter-spacing:.14em;font-size:11px}
+nav{display:flex;gap:22px}
+nav a{
+  color:#fff;text-decoration:none;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  opacity:.75;transition:opacity .25s;
+}
+nav a:hover{opacity:1}
+@media(max-width:760px){nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100vh;overflow:hidden;background:#0b0e14}
+.hero-img{
+  position:absolute;inset:-8% 0;
+  background:url('images/img-000.jpg') center/cover no-repeat;
+  transform:scale(1.12);
+  animation:herozoom 2.6s cubic-bezier(.22,1,.36,1) forwards;
+  will-change:transform;
+}
+@keyframes herozoom{to{transform:scale(1)}}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,14,.42) 0%,rgba(5,8,14,.08) 40%,rgba(5,8,14,.55) 100%)}
+.hero-inner{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 32px 48px;color:#fff;
+}
+.hero-kicker{
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:0;
+  animation:fadeup 1s .9s cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero-title{
+  margin-top:14px;
+  font-weight:800;text-transform:uppercase;line-height:.96;letter-spacing:-.01em;
+  font-size:clamp(44px,8.4vw,124px);
+  max-width:14ch;
+  overflow:hidden;
+}
+.hero-title span{display:block;transform:translateY(110%);animation:riseup 1.1s .45s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title span:nth-child(2){animation-delay:.6s}
+@keyframes riseup{to{transform:translateY(0)}}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-meta{
+  display:flex;gap:34px;flex-wrap:wrap;margin-top:26px;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  opacity:0;animation:fadeup 1s 1.15s cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero-meta div{border-top:1px solid rgba(255,255,255,.35);padding-top:8px;min-width:150px}
+.hero-meta b{display:block;font-weight:400;opacity:.6;font-size:10px;margin-bottom:4px;letter-spacing:.22em}
+.scroll-hint{
+  position:absolute;right:36px;bottom:44px;color:#fff;font-size:10px;letter-spacing:.3em;
+  writing-mode:vertical-rl;text-transform:uppercase;opacity:.7;
+  animation:hint 2.2s 1.6s ease-in-out infinite;
+}
+@keyframes hint{0%,100%{transform:translateY(0);opacity:.7}50%{transform:translateY(10px);opacity:.35}}
+
+/* ---------- generic section ---------- */
+section{position:relative}
+.wrap{max-width:1440px;margin:0 auto;padding:0 32px}
+.label{
+  font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);
+  display:flex;align-items:center;gap:14px;
+}
+.label::before{content:"";width:34px;height:1px;background:var(--grey);display:inline-block}
+.statement{
+  font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1.04;
+  font-size:clamp(28px,4.6vw,64px);
+  margin-top:26px;max-width:22ch;
+}
+.body-zh{
+  font-family:'Noto Sans SC',sans-serif;font-weight:300;
+  font-size:clamp(15px,1.25vw,18px);line-height:2;color:#3d3a35;
+  max-width:56ch;
+}
+.pad{padding:120px 0}
+@media(max-width:760px){.pad{padding:72px 0}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(46px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+.rv.on{opacity:1;transform:none}
+.rv-clip{clip-path:inset(12% 6% 12% 6%);transition:clip-path 1.2s cubic-bezier(.22,1,.36,1),opacity .9s,transform .9s cubic-bezier(.22,1,.36,1)}
+.rv-clip.on{clip-path:inset(0 0 0 0)}
+
+/* ---------- intro / meta ---------- */
+.intro .statement{max-width:26ch}
+.meta-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:64px;
+  border-top:1px solid var(--line);padding-top:26px;
+}
+.meta-grid h4{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--grey);font-weight:500;margin-bottom:12px}
+.meta-grid p{font-size:14px;line-height:1.9;font-weight:400}
+@media(max-width:860px){.meta-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- figures ---------- */
+figure{position:relative;overflow:hidden;background:var(--paper2)}
+figure img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transform:scale(1.02);transition:transform 1.1s cubic-bezier(.22,1,.36,1);
+  cursor:zoom-in;
+}
+figure:hover img{transform:scale(1.07)}
+figcaption{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:12px 2px 0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);
+}
+.full{width:100%}
+.full img{max-height:88vh}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.grid2+.grid2{margin-top:28px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+
+/* offset editorial pairs */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.pair.rev> :first-child{order:2}
+@media(max-width:760px){.pair{grid-template-columns:1fr}.pair.rev> :first-child{order:0}}
+.pair .txt{align-self:center;padding:0 6%}
+.pair .txt .num{font-size:11px;letter-spacing:.3em;color:var(--grey);text-transform:uppercase}
+.pair .txt h3{
+  font-size:clamp(22px,2.6vw,36px);font-weight:800;text-transform:uppercase;line-height:1.1;
+  margin:16px 0 20px;
+}
+
+/* horizontal strip */
+.strip{display:flex;gap:24px;overflow-x:auto;padding:8px 32px 26px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 min(420px,78vw);scroll-snap-align:start}
+.strip figure img{aspect-ratio:3/4}
+
+/* ---------- vip ---------- */
+.vip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.vip-grid figure img{aspect-ratio:4/5}
+@media(max-width:760px){.vip-grid{grid-template-columns:1fr}}
+.tag{
+  position:absolute;top:14px;left:14px;z-index:2;
+  background:rgba(244,242,238,.92);color:var(--ink);
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase;padding:7px 12px;
+}
+
+/* ---------- plan ---------- */
+.plan{background:var(--ink);color:var(--paper)}
+.plan .label{color:#8f8c85}.plan .label::before{background:#8f8c85}
+.plan .body-zh{color:#c9c5bd}
+.plan figure{background:#1d1d1d}
+.plan figcaption{color:#8f8c85}
+
+/* ---------- big quote band ---------- */
+.band{padding:140px 0;text-align:center}
+.band .statement{margin-left:auto;margin-right:auto;max-width:24ch}
+.band .label{justify-content:center}
+.band .label::before{display:none}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:var(--paper);padding:90px 32px 40px}
+footer .big{
+  font-size:clamp(34px,6vw,86px);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:-.01em;
+}
+footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;margin-top:64px;border-top:1px solid rgba(244,242,238,.18);padding-top:22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8f8c85}
+footer a{color:var(--paper);text-decoration:none;border-bottom:1px solid rgba(244,242,238,.4)}
+
+/* ---------- lightbox ---------- */
+#lb{
+  position:fixed;inset:0;z-index:300;background:rgba(10,10,10,.94);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .35s;cursor:zoom-out;
+}
+#lb.on{opacity:1;pointer-events:auto}
+#lb img{max-width:94vw;max-height:92vh;object-fit:contain;transform:scale(.96);transition:transform .35s}
+#lb.on img{transform:scale(1)}
+#lb .cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:#b9b5ad;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+
+.to-top{
+  position:fixed;right:26px;bottom:26px;z-index:150;width:46px;height:46px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;
+  font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;transform:translateY(8px);
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:none}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header id="hdr">
+  <div class="brand">Ala-Archa<span class="small"></span><small>悬崖餐厅设计方案</small></div>
+  <nav>
+    <a href="https://abddf258ea653e79d.app.workbuddy.host/?sharecode=U4LN3CZ52T#arch">Architecture</a>
+    <a href="https://abddf258ea653e79d.app.workbuddy.host/?sharecode=U4LN3CZ52T#plan">Plan</a>
+    <a href="https://abddf258ea653e79d.app.workbuddy.host/?sharecode=U4LN3CZ52T#terrace">Terrace</a>
+    <a href="https://abddf258ea653e79d.app.workbuddy.host/?sharecode=U4LN3CZ52T#restaurant">Restaurant</a>
+    <a href="https://abddf258ea653e79d.app.workbuddy.host/?sharecode=U4LN3CZ52T#vip">VIP Rooms</a>
+    <a href="https://abddf258ea653e79d.app.workbuddy.host/?sharecode=U4LN3CZ52T#lobby">Lobby &amp; Bar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-img" id="heroImg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">Design plan for a cliffside restaurant</div>
+    <h1 class="hero-title"><span>The Cliffside</span><span>Restaurant</span></h1>
+    <div class="hero-meta">
+      <div><b>Location</b>Ala-Archa National Park, Kyrgyzstan</div>
+      <div><b>Type</b>Hospitality · Architecture &amp; Interior</div>
+      <div><b>Year</b>— ’26</div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- INTRO -->
+<section class="pad intro">
+  <div class="wrap">
+    <div class="label rv">Project Brief</div>
+    <h2 class="statement rv">A dining room suspended between the cliff edge and the sky of the Tianshan mountains</h2>
+    <p class="body-zh rv" style="margin-top:34px">
+      项目坐落于吉尔吉斯斯坦阿拉恰（Ala-Archa）国家公园的峡谷台地之上。建筑以一组连续的拱形屋面悬挑于崖壁之外，
+      整面落地玻璃将雪山、云杉与峡谷尽收眼底——用餐者仿佛悬浮于山谷之间。
+      设计由内向外展开：环形露台、中央餐区、七间 VIP 包房、大堂与酒吧，共同构成约一个完整的山地款待体验。
+    </p>
+    <div class="meta-grid">
+      <div class="rv"><h4>Industry</h4><p>酒店餐饮<br>Hospitality</p></div>
+      <div class="rv"><h4>Type</h4><p>建筑 + 室内设计<br>Architecture &amp; Interior</p></div>
+      <div class="rv"><h4>Scope</h4><p>露台 · 餐厅 · 7 间 VIP 包房<br>大堂 · 酒吧 · 动线</p></div>
+      <div class="rv"><h4>Setting</h4><p>天山山脉 · 悬崖台地<br>Cliffside, Tianshan</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="pad" id="arch" style="padding-top:0">
+  <div class="wrap">
+    <div class="label rv">Architecture</div>
+    <h2 class="statement rv">A vaulted silhouette that echoes the ridgeline behind it</h2>
+  </div>
+  <div class="wrap" style="margin-top:56px">
+    <figure class="full rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-001.jpg" alt="建筑日景" loading="lazy"></figure>
+    <figcaption><span>Exterior — Day view</span><span>01</span></figcaption>
+  </div>
+  <div class="wrap pair" style="margin-top:72px">
+    <figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-002.jpg" alt="建筑与雪山" loading="lazy"></figure>
+    <div class="txt rv">
+      <div class="num">Form</div>
+      <h3> grown from the terrain</h3>
+      <p class="body-zh">连续拱券的屋顶曲线呼应身后山脊的起伏；深色金属屋面与木色格栅立面，让建筑在松林间既醒目又谦逊。架空柱廊将体量轻轻托起，最大限度保留原有地形与植被。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section class="pad plan" id="plan">
+  <div class="wrap">
+    <div class="label rv">Plan</div>
+    <h2 class="statement rv">A semicircular terrace wrapped around a central dining hall</h2>
+    <p class="body-zh rv" style="margin-top:30px">
+      平面以中央餐厅为锚点：半圆形露台环抱餐区向峡谷展开，VIP 包房、备餐与后勤区收束于山体一侧的矩形体量内。
+      每条动线——宾客、服务、景观——都被精确组织，点击平面图可放大查看细节。
+    </p>
+  </div>
+  <div class="wrap" style="margin-top:56px">
+    <figure class="full rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-003.jpg" alt="总平面图" loading="lazy"></figure>
+    <figcaption><span>Master plan — click to zoom</span><span>02</span></figcaption>
+  </div>
+  <div class="wrap" style="margin-top:28px;max-width:900px">
+    <figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-018.jpg" alt="VIP包房平面" loading="lazy"></figure>
+    <figcaption><span>VIP room — plan detail</span><span>03</span></figcaption>
+  </div>
+</section>
+
+<!-- TERRACE -->
+<section class="pad" id="terrace">
+  <div class="wrap">
+    <div class="label rv">Terrace</div>
+    <h2 class="statement rv">Dining above the valley, in every season</h2>
+    <p class="body-zh rv" style="margin-top:30px">
+      环形露台是整座餐厅的灵魂：栏杆之外即是深谷与雪线。无论盛夏的长昼还是冬日的静夜，
+      露台都以壁炉、灯光与木质坐席款待每一位来客。
+    </p>
+  </div>
+  <div class="wrap" style="margin-top:56px">
+    <figure class="full rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-004.jpg" alt="露台夜景" loading="lazy"></figure>
+    <figcaption><span>Terrace — night over the valley</span><span>04</span></figcaption>
+  </div>
+  <div class="strip" style="margin-top:56px">
+    <figure class="rv"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-005.jpg" alt="露台" loading="lazy"></figure>
+    <figure class="rv"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-007.jpg" alt="露台" loading="lazy"></figure>
+    <figure class="rv"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-009.jpg" alt="露台" loading="lazy"></figure>
+    <figure class="rv"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-050.jpg" alt="露台" loading="lazy"></figure>
+    <figure class="rv"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-051.jpg" alt="露台" loading="lazy"></figure>
+  </div>
+  <div class="wrap grid2" style="margin-top:28px">
+    <div>
+      <figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-006.jpg" alt="露台" loading="lazy"></figure>
+      <figcaption><span>Terrace lounge</span><span>05</span></figcaption>
+    </div>
+    <div>
+      <figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-008.jpg" alt="露台" loading="lazy"></figure>
+      <figcaption><span>Terrace dining</span><span>06</span></figcaption>
+    </div>
+  </div>
+  <div class="wrap grid2">
+    <div>
+      <figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-011.jpg" alt="露台聚餐" loading="lazy"></figure>
+      <figcaption><span>Winter terrace</span><span>07</span></figcaption>
+    </div>
+    <div>
+      <figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-015.jpg" alt="窗景吧台" loading="lazy"></figure>
+      <figcaption><span>Golden hour</span><span>08</span></figcaption>
+    </div>
+  </div>
+</section>
+
+<!-- RESTAURANT -->
+<section class="pad" id="restaurant" style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="label rv">Restaurant</div>
+    <h2 class="statement rv">Timber, stone and glass framing a wall of snow peaks</h2>
+  </div>
+  <div class="wrap" style="margin-top:56px">
+    <figure class="full rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-036.jpg" alt="餐厅主厅" loading="lazy"></figure>
+    <figcaption><span>Main dining hall</span><span>09</span></figcaption>
+  </div>
+  <div class="wrap pair rev" style="margin-top:72px">
+    <figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-013.jpg" alt="餐厅" loading="lazy"></figure>
+    <div class="txt rv">
+      <div class="num">Material</div>
+      <h3>Warm wood against cold mountains</h3>
+      <p class="body-zh">室内以深木色、皮革与亚麻为基底，与窗外的雪线形成冷暖对话。环形座席围绕中央景观位展开，每一张餐桌都拥有无遮挡的山景视野。</p>
+    </div>
+  </div>
+  <div class="wrap grid2" style="margin-top:56px">
+    <div><figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-012.jpg" alt="餐厅" loading="lazy"></figure><figcaption><span>Window tables</span><span>10</span></figcaption></div>
+    <div><figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-014.jpg" alt="餐厅" loading="lazy"></figure><figcaption><span>Dining detail</span><span>11</span></figcaption></div>
+  </div>
+  <div class="wrap grid2">
+    <div><figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-031.jpg" alt="餐厅" loading="lazy"></figure><figcaption><span>Banquette</span><span>12</span></figcaption></div>
+    <div><figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-032.jpg" alt="餐厅" loading="lazy"></figure><figcaption><span>Corner view</span><span>13</span></figcaption></div>
+  </div>
+  <div class="strip" style="margin-top:56px">
+    <figure class="rv"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-033.jpg" alt="餐厅" loading="lazy"></figure>
+    <figure class="rv"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-034.jpg" alt="餐厅" loading="lazy"></figure>
+    <figure class="rv"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-037.jpg" alt="餐厅" loading="lazy"></figure>
+    <figure class="rv"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-039.jpg" alt="餐厅" loading="lazy"></figure>
+    <figure class="rv"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-041.jpg" alt="餐厅" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- VIP -->
+<section class="pad" id="vip">
+  <div class="wrap">
+    <div class="label rv">VIP Rooms</div>
+    <h2 class="statement rv">Seven private rooms, seven interpretations of the mountain</h2>
+    <p class="body-zh rv" style="margin-top:30px">
+      七间 VIP 包房沿山体一侧排布，每间配备独立备餐间与洗手间。从材质、色彩到艺术品，
+      每间包房都有独立的性格——或沉稳如岩壁，或温暖如篝火。
+    </p>
+  </div>
+  <div class="wrap vip-grid" style="margin-top:56px">
+    <figure class="rv rv-clip"><span class="tag">Case 01</span><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-016.jpg" alt="VIP 1" loading="lazy"></figure>
+    <figure class="rv rv-clip"><span class="tag">Case 01 · II</span><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-017.jpg" alt="VIP 1b" loading="lazy"></figure>
+    <figure class="rv rv-clip"><span class="tag">Case 02</span><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-020.jpg" alt="VIP 2" loading="lazy"></figure>
+    <figure class="rv rv-clip"><span class="tag">Case 02 · II</span><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-021.jpg" alt="VIP 2b" loading="lazy"></figure>
+    <figure class="rv rv-clip"><span class="tag">Case 03</span><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-023.jpg" alt="VIP 3" loading="lazy"></figure>
+    <figure class="rv rv-clip"><span class="tag">Case 04</span><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-024.jpg" alt="VIP 4" loading="lazy"></figure>
+    <figure class="rv rv-clip"><span class="tag">Case 05</span><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-027.jpg" alt="VIP 5" loading="lazy"></figure>
+    <figure class="rv rv-clip"><span class="tag">Case 06</span><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-028.jpg" alt="VIP 6" loading="lazy"></figure>
+  </div>
+  <div class="wrap" style="margin-top:28px">
+    <figure class="full rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-019.jpg" alt="VIP 2 wide" loading="lazy"></figure>
+    <figcaption><span>Case 02 — panorama</span><span>14</span></figcaption>
+  </div>
+  <div class="wrap grid2" style="margin-top:28px">
+    <div><figure class="rv rv-clip"><span class="tag">Case 07</span><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-029.jpg" alt="VIP 7" loading="lazy"></figure><figcaption><span>Case 07</span><span>15</span></figcaption></div>
+    <div><figure class="rv rv-clip"><span class="tag">Case 07 · II</span><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-030.jpg" alt="VIP 7b" loading="lazy"></figure><figcaption><span>Case 07 — detail</span><span>16</span></figcaption></div>
+  </div>
+</section>
+
+<!-- LOBBY & BAR -->
+<section class="pad" id="lobby" style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="label rv">Lobby &amp; Bar</div>
+    <h2 class="statement rv">A double-height hall of timber columns and light</h2>
+  </div>
+  <div class="wrap" style="margin-top:56px">
+    <figure class="full rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-035.jpg" alt="大堂" loading="lazy"></figure>
+    <figcaption><span>Lobby — arrival</span><span>17</span></figcaption>
+  </div>
+  <div class="wrap" style="margin-top:28px">
+    <figure class="full rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-038.jpg" alt="酒吧" loading="lazy"></figure>
+    <figcaption><span>Bar — nightcap above the clouds</span><span>18</span></figcaption>
+  </div>
+  <div class="wrap pair" style="margin-top:72px">
+    <figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-046.jpg" alt="走廊" loading="lazy"></figure>
+    <div class="txt rv">
+      <div class="num">Passage</div>
+      <h3>Circulation as a gallery</h3>
+      <p class="body-zh">连接各功能区的走廊被设计为一条光影画廊：木饰面、壁灯与艺术品引导宾客在包房、餐厅与露台之间穿行，步移景异。</p>
+    </div>
+  </div>
+  <div class="wrap grid2" style="margin-top:56px">
+    <div><figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-044.jpg" alt="洗手间" loading="lazy"></figure><figcaption><span>Powder room — detail</span><span>19</span></figcaption></div>
+    <div><figure class="rv rv-clip"><img src="./abddf258ea653e79d.app.workbuddy.host_files/img-042.jpg" alt="洗手间" loading="lazy"></figure><figcaption><span>Powder room</span><span>20</span></figcaption></div>
+  </div>
+</section>
+
+<!-- QUOTE BAND -->
+<section class="band">
+  <div class="wrap">
+    <div class="label rv">All-season living</div>
+    <h2 class="statement rv">As inviting on a quiet winter evening as on a long summer afternoon</h2>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="big">Ala-Archa<br>Cliffside Restaurant</div>
+  <div class="row">
+    <span>Ala-Archa National Park · Kyrgyzstan — ’26</span>
+    <span><a href="https://abddf258ea653e79d.app.workbuddy.host/?sharecode=U4LN3CZ52T#top">Back to top ↑</a></span>
+    <span>Design plan · 32 sheets · Architecture &amp; Interior</span>
+  </div>
+</footer>
+
+<div class="to-top" id="toTop">↑</div>
+
+<div id="lb"><img src="https://abddf258ea653e79d.app.workbuddy.host/?sharecode=U4LN3CZ52T" alt=""><div class="cap"></div></div>
+
+<script>
+/* scroll progress + header hide + to-top */
+const prog=document.getElementById('progress'),
+      hdr=document.getElementById('hdr'),
+      toTop=document.getElementById('toTop'),
+      heroImg=document.getElementById('heroImg');
+let lastY=0;
+addEventListener('scroll',()=>{
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  prog.style.width=(y/h*100)+'%';
+  hdr.classList.toggle('hide',y>lastY&&y>400);
+  toTop.classList.toggle('show',y>innerHeight);
+  lastY=y;
+  /* hero parallax */
+  if(y<innerHeight){heroImg.style.translate='0 '+(y*.28)+'px'}
+},{passive:true});
+toTop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}
+}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* lightbox */
+const lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('.cap');
+document.querySelectorAll('figure img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    lbImg.src=img.src;
+    const cap=img.closest('figure').parentElement.querySelector('figcaption span');
+    lbCap.textContent=cap?cap.textContent:img.alt;
+    lb.classList.add('on');document.body.style.overflow='hidden';
+  });
+});
+lb.onclick=()=>{lb.classList.remove('on');document.body.style.overflow='';lbImg.src=''};
+addEventListener('keydown',e=>{if(e.key==='Escape')lb.onclick()});
+</script>
+
+<link rel="stylensheet" href="/jiudian/style.css"
+
+</body></html>
